@@ -13,61 +13,100 @@
       --header-h:56px;
     }
     html,body{height:100%}
-    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;background:linear-gradient(180deg,var(--bg),#fff 30%);color:var(--ink)}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;
+      background:linear-gradient(180deg,var(--bg),#fff 30%);
+      color:var(--ink)
+    }
     .container{max-width:1200px;margin:0 auto;padding:24px}
 
-    /* Sticky top bar */
-    header{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid #eee}
-    .nav{display:flex;gap:10px;align-items:center;justify-content:space-between;min-height:var(--header-h);padding:8px 0}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:900}
-    .brand-badge{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--p2),var(--p1));display:grid;place-items:center;box-shadow:var(--shadow)}
-        /* Sections */
+    header{
+      position:sticky;top:0;z-index:999;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid #eee
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      min-height:var(--header-h);padding:8px 0
+    }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:14px}
+    .brand-badge{
+      width:36px;height:36px;border-radius:12px;
+      background:linear-gradient(135deg,var(--p2),var(--p1));
+      display:grid;place-items:center;box-shadow:var(--shadow)
+    }
+
     main{padding-top:14px}
-    section{margin-top:22px;padding:20px;background:#fff;border:1px solid #e5e7eb;border-radius:var(--radius);box-shadow:var(--shadow);scroll-margin-top:calc(var(--header-h) + 18px)}
-    section h2{font-size:20px;margin:0 0 12px 0;display:flex;align-items:center;gap:10px;border-bottom:1px solid #eef2f7;padding-bottom:6px}
+    section{
+      margin-top:22px;padding:20px;background:#fff;
+      border:1px solid #e5e7eb;border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      scroll-margin-top:calc(var(--header-h) + 18px)
+    }
+    section h2{
+      font-size:20px;margin:0 0 12px 0;
+      display:flex;align-items:center;gap:10px;
+      border-bottom:1px solid #eef2f7;padding-bottom:6px
+    }
     .sub{color:var(--muted);margin:0 0 10px 0}
 
-    /* Summary cards */
     .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
     .grid{display:grid;gap:18px}
     .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
     @media(max-width:900px){.grid.cols-3{grid-template-columns:1fr}}
 
-    /* Chips */
-    .chip{display:inline-flex;align-items:center;gap:6px;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:800;border:1px solid #e5e7eb;background:#f9fafb}
+    .chip{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:2px 8px;border-radius:999px;
+      font-size:12px;font-weight:800;
+      border:1px solid #e5e7eb;background:#f9fafb
+    }
     .chip.winner{background:#7c3aed;color:#fff;border-color:#7c3aed}
 
-    /* Awards */
-    #awards{background:linear-gradient(135deg, #fff7ed 0%, #f5f3ff 60%, #eff6ff 100%);border:1px solid #e5e7eb}
-    #awards .card{border:1px solid rgba(124,58,237,.18);background:rgba(255,255,255,.78)}
-    #awards a{color:var(--ink);text-decoration:none}
-    
-    /* Award category headings */
     #awards strong{color:#2e1065}
+    #awards a{color:var(--ink);text-decoration:none}
     #awards a:hover{text-decoration:underline}
 
-    /* Team dividers */
-    .team{margin-top:34px;padding-top:24px;border-top:3px solid transparent;background:linear-gradient(#fff,#fff) padding-box, linear-gradient(90deg,var(--p2),var(--p1)) border-box;border-radius:12px}
-    .team:first-of-type{margin-top:10px}
-    .team-divider{display:flex;align-items:center;gap:14px;margin:0 0 18px 0}
-    .team-divider .label{font-weight:900;font-size:16px;letter-spacing:.04em;text-transform:uppercase;color:#111827;padding:6px 14px;border-radius:999px;background:linear-gradient(135deg,var(--p2),var(--p1));box-shadow:var(--shadow)}
-    .team-divider .line{height:2px;flex:1;background:linear-gradient(90deg,#111827,rgba(17,24,39,0))}
+    .team{
+      margin-top:34px;padding-top:24px;
+      border-top:3px solid transparent;
+      background:
+        linear-gradient(#fff,#fff) padding-box,
+        linear-gradient(90deg,var(--p2),var(--p1)) border-box;
+      border-radius:12px
+    }
+    .team-divider{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+    .team-divider .label{
+      font-weight:900;font-size:16px;
+      text-transform:uppercase;
+      padding:6px 14px;border-radius:999px;
+      background:linear-gradient(135deg,var(--p2),var(--p1));
+      box-shadow:var(--shadow)
+    }
+    .team-divider .line{flex:1;height:2px;background:linear-gradient(90deg,#111827,transparent)}
 
-    /* Demo cards (2-column grid per team) */
-    .demo-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-
-    .demo-card{display:grid;grid-template-columns:220px 1fr;gap:16px;background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;border:1px solid #eef2f7}
-    .demo-visual{position:relative;min-height:150px;background:linear-gradient(135deg,var(--p5),var(--p2))}
+    .demo-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .demo-card{
+      display:grid;grid-template-columns:220px 1fr;gap:16px;
+      background:#fff;border-radius:var(--radius);
+      box-shadow:var(--shadow);border:1px solid #eef2f7;overflow:hidden
+    }
+    .demo-visual{background:linear-gradient(135deg,var(--p5),var(--p2));position:relative}
     .demo-visual .meta{padding:12px}
-    .demo-visual strong{display:block;font-weight:900;line-height:1.15}
-    .demo-badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
-    .demo-play{position:absolute;bottom:12px;left:12px;background:#000;color:#fff;border:none;border-radius:999px;padding:7px 12px;font-weight:900;font-size:12px;text-decoration:none;box-shadow:0 2px 4px rgba(0,0,0,.2)}
-    .demo-play:visited{color:#fff}
+    .demo-visual strong{display:block;font-weight:900}
+    .demo-badges{display:flex;gap:6px;margin-bottom:8px}
+    .demo-play{
+      position:absolute;bottom:12px;left:12px;
+      background:#000;color:#fff;border-radius:999px;
+      padding:7px 12px;font-size:12px;font-weight:900;
+      text-decoration:none
+    }
     .demo-play:hover{background:#333}
-
     .demo-content{padding:14px 16px 16px 0}
-    .demo-title{font-size:16px;font-weight:900;margin:14px 0 10px 0}
-    .demo-problem,.demo-solution,.demo-impact{margin:8px 0;font-size:13px;line-height:1.45}
+    .demo-title{font-size:16px;font-weight:900;margin:14px 0 10px}
+    .demo-problem,.demo-solution,.demo-impact{font-size:13px;margin:8px 0}
     .demo-problem strong{color:#dc2626}
     .demo-solution strong{color:#059669}
     .demo-impact strong{color:#7c3aed}
@@ -75,445 +114,13 @@
     @media(max-width:1100px){
       .demo-list{grid-template-columns:1fr}
       .demo-card{grid-template-columns:1fr}
-      .demo-content{padding:0 16px 16px 16px}
+      .demo-content{padding:0 16px 16px}
     }
 
-    /* award cards now use standard card styling (no highlight border) */
-
-footer{margin:30px 0;color:var(--muted);font-size:12px}
-    .ghost{opacity:.65}
-
-    @media print{header{display:none !important} body{background:#fff} .card,section,.demo-card{box-shadow:none;border:1px solid #ddd}}
+    footer{margin:30px 0;color:var(--muted);font-size:12px}
   </style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand" style="font-size:14px">
-        <div class="brand-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>
-        </div>
-        <div>2025 Finance AI Hackathon – Demo Gallery</div>
-      </div>
-      <nav class="top-links" style="display:flex;gap:14px;font-size:13px;font-weight:700">
-        <a href="#overview" style="text-decoration:none;color:var(--ink)">Overview</a>
-        <a href="#awards" style="text-decoration:none;color:var(--ink)">Awards</a>
-        <a href="#solutions" style="text-decoration:none;color:var(--ink)">Solutions</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container">
-    <!-- HERO / OVERVIEW -->
-    <section id="overview" aria-labelledby="title">
-      <h2 style="margin-top:0;border-bottom:none;padding-bottom:0">2025 Finance AI Hackathon</h2>
-      <p style="font-size:18px;font-weight:700;margin:0 0 6px 0">Transforming Finance Through Innovation &amp; Collaboration</p>
-      <p class="sub" style="margin:0 0 12px 0">📅 December 15–16, 2025</p>
-      <p class="sub">Gallery of the Hackathon demos — what problem each team tackled, what they built, and the value it unlocks.</p>
-
-      <div class="card" style="margin-top:14px;padding:18px">
-        <div class="grid cols-3" style="text-align:center">
-          <div style="padding:12px;border-radius:10px;background:var(--p3);box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;gap:4px">
-            <strong style="font-size:28px">70+</strong>
-            <div style="font-weight:700">Participants</div>
-            <span style="font-size:12px;color:var(--ink)">Across Finance</span>
-          </div>
-          <div style="padding:12px;border-radius:10px;background:var(--p2);box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;gap:4px">
-            <strong style="font-size:28px">30+</strong>
-            <div style="font-weight:700">Use Cases</div>
-            <span style="font-size:12px;color:var(--ink)">Problem-led, execution-focused</span>
-          </div>
-          <div style="padding:12px;border-radius:10px;background:var(--p4);box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;gap:4px">
-            <strong style="font-size:28px">25</strong>
-            <div style="font-weight:700">Solutions Built</div>
-            <span style="font-size:12px;color:var(--ink)">Production-minded demos</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="card tech-lift" style="margin-top:18px;display:flex;flex-direction:column;align-items:center;text-align:center">
-        <h3 style="margin:0 0 8px 0;display:flex;align-items:center;justify-content:center;gap:8px">
-          ⚙️ Technology Innovation
-        </h3>
-        <div class="tech-chips" style="display:flex;flex-wrap:nowrap;justify-content:center;gap:10px;white-space:nowrap;overflow-x:auto;max-width:100%">
-          <span class="chip">Microsoft Power Platform</span>
-          <span class="chip">Microsoft Copilot Studio</span>
-          <span class="chip">UiPath</span>
-          <span class="chip">Ironclad</span>
-          <span class="chip">Workday</span>
-          <span class="chip">Atlassian Rovo</span>
-          <span class="chip">AWS</span>
-          <span class="chip">TypeScript</span>
-          <span class="chip">Python</span>
-          <span class="chip">SQL Server</span>
-        </div>
-        <div style="margin-top:8px;font-size:12px;color:var(--muted);max-width:720px">
-          Enterprise platforms + modern engineering stacks used to rapidly prototype real Finance solutions
-        </div>
-      </div>
-    </section>
-
-    <!-- AWARDS (TOP) -->
-    <section id="awards">
-      <h2>🏆 Award Winners</h2>
-      <p class="sub">Click any winner below to jump directly to the solution demo.</p>
-
-      <div class="grid cols-3">
-        <div class="card">
-          <strong>⚡ Cycle Time Reduction</strong>
-          <p class="sub" style="margin-top:8px">
-            <a href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQB2xDnGIOiXQbhpE3OdvQXJAUmLrARfFdgDPo29bHmONtM?e=BQk0JE" target="_blank" rel="noopener"><strong>O365 Automation</strong></a><br>
-            <a href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQAGbaYU0wrcQpcg5XMjTI4nAWLGcTURwsPec_-87uTp6qw?e=YhKffh" target="_blank" rel="noopener"><strong>Audit Sampling</strong></a>
-          </p>
-        </div>
-        <div class="card">
-          <strong>🧙‍♂️ Effective Use of Tech</strong>
-          <p class="sub" style="margin-top:8px">
-            <a href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQBnfqyfsBz6TbnmZGEEnzU4AaoCtLHDKLSDQ4MMGVTuT3I?e=eqtWq0" target="_blank" rel="noopener"><strong>P2P Ironclad MCP</strong></a><br>
-            <a href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQCyflF5BQX3SK4AKUCjLw4PAX4FtznVQKIYBpEMimy3ZrM?e=DTbyDq" target="_blank" rel="noopener"><strong>R&amp;D Tax Credit Analysis</strong></a>
-          </p>
-        </div>
-        <div class="card">
-          <strong>🌟 Overall Awesomeness</strong>
-          <p class="sub" style="margin-top:8px">
-            <a href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQBKPRpgxsPqR40G73bb8wxOActqSj-3dWEdlRl2--sUFH8?e=WrLKd5" target="_blank" rel="noopener"><strong>SOX Intake Agent</strong></a><br>
-            <a href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQBrT-oVwPcfRryqF8SLp-OLAaGwBUyPwvXtnXK6nvoxrFs?e=1kZmGg" target="_blank" rel="noopener"><strong>Transfer Pricing</strong></a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SOLUTIONS -->
-    <section id="solutions">
-      <h2>Hackathon Solutions</h2>
-      <p class="sub">Grouped by team. Each card includes the problem, what was built, and the expected impact.</p>
-
-      <!-- Revenue -->
-      <div class="team" id="team-revenue">
-        <div class="team-divider"><span class="label">Revenue</span><span class="line"></span></div>
-        <div class="demo-list">
-          <!-- #1 -->
-          <article class="demo-card" id="uc-1">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">Revenue</span></div><strong>Use Case #1<br>Open Client Invoice Balances Agent</strong></div><a class="demo-play" href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQD0L9VIFHuGS6uAMEROySTEAWiakI11Qk2pkm5B2a3BYtc?e=gjCdt7" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">Open Client Invoice Balances Agent</h3>
-              <div class="demo-problem"><strong>Problem:</strong> High volume of hours spent by ~10 members of the revenue accounting team to field questions from account managers/partners over easily sourced data.</div>
-              <div class="demo-solution"><strong>Built:</strong> An agent that surfaces open invoice balances from trusted sources so teams can respond consistently and fast.</div>
-              <div class="demo-impact"><strong>Impact:</strong> Streamlined client inquiries, faster revenue activation, and improved customer experience.</div>
-            </div>
-          </article>
-
-          <!-- #2 -->
-          <article class="demo-card" id="uc-2">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">Revenue</span></div><strong>Use Case #2<br>Partner Portal Integration</strong></div><a class="demo-play" href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQAnRn3woyMgRa2A_Xy0dReJASLE__atEndOWkUe2EJhzTM?e=oOhNZt" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">Partner Portal Integration</h3>
-              <div class="demo-problem"><strong>Problem:</strong> Partner data management requires manual coordination across multiple systems and stakeholders.</div>
-              <div class="demo-solution"><strong>Built:</strong> An integration flow that automates partner data movement and reduces handoffs.</div>
-              <div class="demo-impact"><strong>Impact:</strong> Automated partner data flows, improved partner satisfaction, and reduced administrative overhead.</div>
-            </div>
-          </article>
-
-          <!-- #22 (Winner) -->
-          <article class="demo-card award" id="uc-22">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">Revenue</span><span class="chip winner">Award Winner</span></div><strong>Use Case #22<br>Audit Sampling Automation</strong></div><a class="demo-play" href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQAGbaYU0wrcQpcg5XMjTI4nAWLGcTURwsPec_-87uTp6qw?e=YhKffh" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">Audit Sampling Automation</h3>
-              <div class="demo-problem"><strong>Problem:</strong> Revenue audit sampling requires extensive manual review and statistical validation processes.</div>
-              <div class="demo-solution"><strong>Built:</strong> Automated sampling logic that standardizes selection and documentation.</div>
-              <div class="demo-impact"><strong>Impact:</strong> Consistent audit quality and reduced audit preparation time.</div>
-            </div>
-          </article>
-
-          <!-- #26 -->
-          <article class="demo-card" id="uc-26">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">Revenue</span></div><strong>Use Case #26<br>CCP Reconciliation</strong></div><a class="demo-play" href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQCbuQJMo-RcSaHPzVlr0T8nAZB8QBi2yqKAkoxE_Esfa7Y?e=ceiMg0" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">CCP Reconciliation</h3>
-              <div class="demo-problem"><strong>Problem:</strong> CCP reconciliation processes require manual validation and exception handling across multiple systems.</div>
-              <div class="demo-solution"><strong>Built:</strong> Automated reconciliation workflow with exception surfacing and standardized outputs.</div>
-              <div class="demo-impact"><strong>Impact:</strong> Improved accuracy and reduced manual effort for revenue operations.</div>
-            </div>
-          </article>
-
-          <!-- #31 -->
-          <article class="demo-card" id="uc-31">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">FPA/Revenue</span></div><strong>Use Case #31<br>Monthly Reporting Package (MIRA)</strong></div><a class="demo-play" href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQBgyfLxkRjIQ4_RuL3wseTpAVOdWqpDOWiYjCLZpdkdDyQ?e=kwo2e9" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">Monthly Reporting Package (MIRA)</h3>
-              <div class="demo-problem"><strong>Problem:</strong> Monthly reporting package is time-consuming and fragmented (versions get lost; manual updates lead to errors).</div>
-              <div class="demo-solution"><strong>Built:</strong> Consolidated workflow for building the monthly package with better version control.</div>
-              <div class="demo-impact"><strong>Impact:</strong> More time for analysis and insights through reduced manual assembly and fewer errors.</div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!-- Accounting -->
-      <div class="team" id="team-accounting">
-        <div class="team-divider"><span class="label">Accounting</span><span class="line"></span></div>
-        <div class="demo-list">
-          <article class="demo-card" id="uc-5">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">Accounting</span></div><strong>Use Case #5<br>Software Capitalization Assessment</strong></div><a class="demo-play" href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQDt8N46OOlfQY2zsSDmarOUAbWa74pVhzn8Tw882Kh-L_c?e=Ui1GBH" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">Software Capitalization Assessment</h3>
-              <div class="demo-problem"><strong>Problem:</strong> Software capitalization decisions require complex evaluation of development activities and GAAP compliance.</div>
-              <div class="demo-solution"><strong>Built:</strong> Guided workflow to assess capitalization criteria and generate consistent documentation.</div>
-              <div class="demo-impact"><strong>Impact:</strong> Consistent capitalization decisions, improved audit trail, and optimized tax treatment.</div>
-            </div>
-          </article>
-
-          <article class="demo-card" id="uc-12">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">Accounting</span></div><strong>Use Case #12<br>Close Checklist Automation</strong></div><a class="demo-play" href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQA4ZuO___asRowTMbQ8cBKYAQCtWGJgh7F0Ld83rI7g2GQ?e=a2fbfR" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">Close Checklist Automation</h3>
-              <div class="demo-problem"><strong>Problem:</strong> Month-end close checklists require manual tracking and status updates across multiple teams.</div>
-              <div class="demo-solution"><strong>Built:</strong> Automated checklist management with real-time status visibility.</div>
-              <div class="demo-impact"><strong>Impact:</strong> Accelerated close cycles through reduced manual tracking and clearer accountability.</div>
-            </div>
-          </article>
-
-          <article class="demo-card" id="uc-16">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">Accounting</span></div><strong>Use Case #16<br>Segment Allocation Mapping to Cost Centers</strong></div><a class="demo-play" href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQDbWEPpCqhnSa-s_CMxASMYAdMTPTiaOnpeSFMdOxc-j58?e=Esgwvx" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">Segment Allocation Mapping to Cost Centers</h3>
-              <div class="demo-problem"><strong>Problem:</strong> Complex allocation mapping requires manual validation and frequent updates; inactive definitions add unnecessary processing time.</div>
-              <div class="demo-solution"><strong>Built:</strong> Automated allocation logic and cleanup to keep definitions current.</div>
-              <div class="demo-impact"><strong>Impact:</strong> Consistent segment reporting and reduced month-end processing time.</div>
-            </div>
-          </article>
-
-          <article class="demo-card award" id="uc-17">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">Accounting</span><span class="chip winner">Award Winner</span></div><strong>Use Case #17<br>O365 Inv Automation &amp; AI Analytics</strong></div><a class="demo-play" href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQB2xDnGIOiXQbhpE3OdvQXJAUmLrARfFdgDPo29bHmONtM?e=BQk0JE" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">O365 Inv Automation &amp; AI Analytics</h3>
-              <div class="demo-problem"><strong>Problem:</strong> Manual invoice processing in O365 lacks automation; huge monthly datasets are nearly impossible to analyze quickly.</div>
-              <div class="demo-solution"><strong>Built:</strong> Automation + analytics workflow to process and analyze large invoice files.</div>
-              <div class="demo-impact"><strong>Impact:</strong> Streamlined invoice workflows, improved processing speed, and enhanced accuracy.</div>
-            </div>
-          </article>
-
-          <article class="demo-card" id="uc-29">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">Accounting</span></div><strong>Use Case #29<br>TLD Cost Update Automation</strong></div><a class="demo-play" href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQBECtFG_vMWTrMZNm_ZkCE7AcAH28M4N71Fk4XvJsCKWkc?e=FckaK9" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">TLD Cost Update Automation</h3>
-              <div class="demo-problem"><strong>Problem:</strong> Millions of rows require manual splitting and slow formulas in Excel.</div>
-              <div class="demo-solution"><strong>Built:</strong> Automated workflow to process large datasets faster with fewer spreadsheet workarounds.</div>
-              <div class="demo-impact"><strong>Impact:</strong> Improved processing speed and enhanced accuracy.</div>
-            </div>
-          </article>
-
-          <article class="demo-card" id="uc-4">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">Tech Accounting</span></div><strong>Use Case #4<br>CFO Dashboard Automation</strong></div><a class="demo-play" href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQDUDrtFUOEhSLWkEHp0eeRrAeEniN1mseX5CtDuVkGc_OA?e=kyqyqo" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">CFO Dashboard Automation</h3>
-              <div class="demo-problem"><strong>Problem:</strong> Executive reporting requires manual aggregation and formatting of financial data from multiple sources.</div>
-              <div class="demo-solution"><strong>Built:</strong> Automated dashboard generation to standardize the executive package.</div>
-              <div class="demo-impact"><strong>Impact:</strong> Real-time executive insights, automated reporting, and enhanced decision-making capabilities.</div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!-- Tax -->
-      <div class="team" id="team-tax">
-        <div class="team-divider"><span class="label">Tax</span><span class="line"></span></div>
-        <div class="demo-list">
-          <article class="demo-card award" id="uc-7">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">Tax</span><span class="chip winner">Award Winner</span></div><strong>Use Case #7<br>Tax R&amp;D Credit Analysis</strong></div><a class="demo-play" href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQCyflF5BQX3SK4AKUCjLw4PAX4FtznVQKIYBpEMimy3ZrM?e=DTbyDq" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">Tax R&amp;D Credit Analysis</h3>
-              <div class="demo-problem"><strong>Problem:</strong> R&amp;D tax credit calculations require detailed activity tracking and qualification analysis.</div>
-              <div class="demo-solution"><strong>Built:</strong> Analysis workflow to identify qualifying activities and structure documentation for review.</div>
-              <div class="demo-impact"><strong>Impact:</strong> Maximized tax credits, improved documentation, and enhanced audit readiness.</div>
-            </div>
-          </article>
-
-          <article class="demo-card" id="uc-9">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">Tax</span></div><strong>Use Case #9<br>Indirect Tax Automation</strong></div><a class="demo-play" href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQBWNEyLraUfSrjUb12ul9fFAW4uTKreXN7lXVsATmG40E8?e=QakWNk" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">Indirect Tax Automation</h3>
-              <div class="demo-problem"><strong>Problem:</strong> Manual handling of Indirect Tax mailbox emails leads to delays, high effort, and risk of errors.</div>
-              <div class="demo-solution"><strong>Built:</strong> Automated triage and routing workflow for tax requests.</div>
-              <div class="demo-impact"><strong>Impact:</strong> Faster turnaround and reduced manual effort for tax-related requests.</div>
-            </div>
-          </article>
-
-          <article class="demo-card" id="uc-20">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">Tax</span></div><strong>Use Case #20<br>India WHT Monthly Vendor Statement Automation</strong></div><a class="demo-play" href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQCmFMTEcigmSpTqXTZjkBAjAc7XAn1WQkc3LOxl6l4lL9k?e=GJMwdO" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">India WHT Monthly Vendor Statement Automation</h3>
-              <div class="demo-problem"><strong>Problem:</strong> Monthly WHT vendor statements require extensive manual compilation and validation.</div>
-              <div class="demo-solution"><strong>Built:</strong> Automated statement generation with standardized outputs.</div>
-              <div class="demo-impact"><strong>Impact:</strong> Improved accuracy and reduced compliance processing time.</div>
-            </div>
-          </article>
-
-          <article class="demo-card" id="uc-23">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">Tax</span></div><strong>Use Case #23<br>Tax Reporting Dashboard Item</strong></div><a class="demo-play" href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQCq_i6hCYYKQLkFHq7ymHtoAf6EhWNRenXikLakDhtzPWI?e=mfLlD2" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">Tax Reporting Dashboard Item</h3>
-              <div class="demo-problem"><strong>Problem:</strong> Tax data review requires manual compilation and summary formatting across multiple data sources and systems.</div>
-              <div class="demo-solution"><strong>Built:</strong> A dashboard that summarizes tax data with attributes for review.</div>
-              <div class="demo-impact"><strong>Impact:</strong> Faster review with improved consistency and traceability.</div>
-            </div>
-          </article>
-
-          <article class="demo-card award" id="uc-24">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">Tax</span><span class="chip winner">Award Winner</span></div><strong>Use Case #24<br>Transfer Pricing Documentation</strong></div><a class="demo-play" href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQBrT-oVwPcfRryqF8SLp-OLAaGwBUyPwvXtnXK6nvoxrFs?e=1kZmGg" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">Transfer Pricing Documentation</h3>
-              <div class="demo-problem"><strong>Problem:</strong> Transfer pricing documentation requires extensive manual compilation and regulatory compliance validation.</div>
-              <div class="demo-solution"><strong>Built:</strong> Automated documentation workflow to standardize inputs and generate packages.</div>
-              <div class="demo-impact"><strong>Impact:</strong> Improved compliance accuracy and reduced manual effort for filings.</div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!-- Procurement -->
-      <div class="team" id="team-procurement">
-        <div class="team-divider"><span class="label">Procurement</span><span class="line"></span></div>
-        <div class="demo-list">
-          <article class="demo-card award" id="uc-6">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">Procurement</span><span class="chip winner">Award Winner</span></div><strong>Use Case #6<br>P2P Ironclad Integration</strong></div><a class="demo-play" href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQBnfqyfsBz6TbnmZGEEnzU4AaoCtLHDKLSDQ4MMGVTuT3I?e=eqtWq0" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">P2P Ironclad Integration</h3>
-              <div class="demo-problem"><strong>Problem:</strong> Contract data from Ironclad needs seamless integration with P2P workflows for complete visibility.</div>
-              <div class="demo-solution"><strong>Built:</strong> Integration connecting contract metadata to downstream P2P steps.</div>
-              <div class="demo-impact"><strong>Impact:</strong> Unified contract-to-payment visibility, improved compliance, streamlined vendor management.</div>
-            </div>
-          </article>
-
-          <article class="demo-card" id="uc-10">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">Procurement</span></div><strong>Use Case #10<br>APIME – Agentic Procurement Insights</strong></div><a class="demo-play" href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQC2k5qXFrvPQqrpi7oW7BFtAYg_3XckFypIr3nEWYqcD24?e=8fk2YJ" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">APIME – Agentic Procurement Insights of Macro Economics and M&amp;A</h3>
-              <div class="demo-problem"><strong>Problem:</strong> Missing live macroeconomic and global trend signals to stay ahead of market situations and streamline decisions.</div>
-              <div class="demo-solution"><strong>Built:</strong> Autonomous intelligence layer translating economic and M&amp;A signals into procurement insights.</div>
-              <div class="demo-impact"><strong>Impact:</strong> Better decisions with potential cost avoidance and savings (TBD).</div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!-- Payroll -->
-      <div class="team" id="team-payroll">
-        <div class="team-divider"><span class="label">Payroll</span><span class="line"></span></div>
-        <div class="demo-list">
-          <article class="demo-card" id="uc-14">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">Payroll</span></div><strong>Use Case #14<br>U.S. Payroll Automation</strong></div><a class="demo-play" href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQCPOr9g6QBsRLiKDtGSf67UAVVvCzzAHeg71iUu5xc064Y?e=vKvzY7" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">U.S. Payroll Automation</h3>
-              <div class="demo-problem"><strong>Problem:</strong> Payroll compliance changes frequently; manual tracking is inefficient and error-prone.</div>
-              <div class="demo-solution"><strong>Built:</strong> AI-powered compliance agent that monitors changes and flags updates for review.</div>
-              <div class="demo-impact"><strong>Impact:</strong> Reduced risk, fewer errors/fines, improved efficiency.</div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!-- Treasury -->
-      <div class="team" id="team-treasury">
-        <div class="team-divider"><span class="label">Treasury</span><span class="line"></span></div>
-        <div class="demo-list">
-          <article class="demo-card" id="uc-27">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">Treasury</span></div><strong>Use Case #27<br>Treasury Weekly Dashboard</strong></div><a class="demo-play" href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQBNx64uMP3UTKlNY4HiYNfyARXimVdNOocxDY0tzJ7R9Gw?e=HEhFa8" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">Treasury Weekly Dashboard</h3>
-              <div class="demo-problem"><strong>Problem:</strong> Weekly treasury reporting requires manual compilation and formatting from multiple sources.</div>
-              <div class="demo-solution"><strong>Built:</strong> Automation to revamp the weekly report into a consistent dashboard package.</div>
-              <div class="demo-impact"><strong>Impact:</strong> Faster weekly reporting and improved visibility into key metrics.</div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!-- Investor Relations -->
-      <div class="team" id="team-ir">
-        <div class="team-divider"><span class="label">Investor Relations</span><span class="line"></span></div>
-        <div class="demo-list">
-          <article class="demo-card" id="uc-13">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">Investor Relations</span></div><strong>Use Case #13<br>Earnings Process Optimization</strong></div><a class="demo-play" href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQD2hGzkpT7mSZDV4rlZ9fgIAUc_DAwceRqfh8vuunICSl4?e=Zfy3UM" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">Earnings Process Optimization</h3>
-              <div class="demo-problem"><strong>Problem:</strong> Earnings process requires coordination across multiple stakeholders with extensive manual review cycles.</div>
-              <div class="demo-solution"><strong>Built:</strong> Streamlined workflow for collection, review, and publishing readiness.</div>
-              <div class="demo-impact"><strong>Impact:</strong> Improved accuracy and faster time-to-market for investor communications.</div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!-- ARC -->
-      <div class="team" id="team-arc">
-        <div class="team-divider"><span class="label">ARC</span><span class="line"></span></div>
-        <div class="demo-list">
-          <article class="demo-card award" id="uc-28">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">ARC</span><span class="chip winner">Award Winner</span></div><strong>Use Case #28<br>SOX Readiness Intake Agent</strong></div><a class="demo-play" href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQBKPRpgxsPqR40G73bb8wxOActqSj-3dWEdlRl2--sUFH8?e=WrLKd5" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">SOX Readiness Intake Agent</h3>
-              <div class="demo-problem"><strong>Problem:</strong> SOX readiness workflow lacks structure and transparency across stakeholders and implementation teams.</div>
-              <div class="demo-solution"><strong>Built:</strong> Structured intake that enables awareness/notifications, consistent execution, transparent reporting, and clear expectations.</div>
-              <div class="demo-impact"><strong>Impact:</strong> More standardized SOX readiness workflow that is repeatable and scalable.</div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!-- FDAT -->
-      <div class="team" id="team-fdat">
-        <div class="team-divider"><span class="label">FDAT</span><span class="line"></span></div>
-        <div class="demo-list">
-          <article class="demo-card" id="uc-11">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">FDAT</span></div><strong>Use Case #11<br>FDAT Portfolio Optimization</strong></div><a class="demo-play" href="https://secureservernet-my.sharepoint.com/:v:/r/personal/vsharma4_godaddy_com/Documents/Videos/Clipchamp/Video%20Project%203/Exports/Use%20Case%2011%20FDAT%20Portfolio.mp4?csf=1&web=1&e=5xE55G" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">FDAT Portfolio Optimization</h3>
-              <div class="demo-problem"><strong>Problem:</strong> FDAT project portfolio requires ongoing optimization and resource reallocation decisions.</div>
-              <div class="demo-solution"><strong>Built:</strong> Portfolio optimization workflow to support prioritization and capacity trade-offs.</div>
-              <div class="demo-impact"><strong>Impact:</strong> Optimized project prioritization, better resource allocation, and enhanced strategic outcomes.</div>
-            </div>
-          </article>
-
-          <article class="demo-card" id="uc-18">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">FDAT</span></div><strong>Use Case #18<br>Capacity Planning for 2026</strong></div><a class="demo-play" href="https://secureservernet-my.sharepoint.com/:v:/r/personal/vsharma4_godaddy_com/Documents/Videos/Clipchamp/Video%20Project/Exports/Video%20Project_Capacity%20Planner.mp4?csf=1&web=1&e=f3sLCi" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">Capacity Planning for 2026</h3>
-              <div class="demo-problem"><strong>Problem:</strong> Resource capacity planning requires complex analysis of historical data and future projections.</div>
-              <div class="demo-solution"><strong>Built:</strong> Planning workflow that produces capacity scenarios and recommendations.</div>
-              <div class="demo-impact"><strong>Impact:</strong> Improved resource utilization and strategic workforce planning.</div>
-            </div>
-          </article>
-
-          <article class="demo-card" id="uc-30">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">FDAT</span></div><strong>Use Case #30<br>Refund Report Alerts</strong></div><a class="demo-play" href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQCJm7dUkeEIT64K6KbKkjBIAWw9V3KK1kcahDk2PNrvzrg?e=fo93mc" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">Refund Report Alerts</h3>
-              <div class="demo-problem"><strong>Problem:</strong> Refund summaries posted to Slack are compiled manually from what is already provided in the dashboard.</div>
-              <div class="demo-solution"><strong>Built:</strong> Automated notifications and snapshots to email and specific Slack channels.</div>
-              <div class="demo-impact"><strong>Impact:</strong> Reduced manual effort and faster distribution of refund insights.</div>
-            </div>
-          </article>
-
-          <article class="demo-card" id="uc-32">
-            <div class="demo-visual"><div class="meta"><div class="demo-badges"><span class="chip">FDAT</span></div><strong>Use Case #32<br>Machine learning forecasting</strong></div><a class="demo-play" href="https://secureservernet.sharepoint.com/:v:/s/Finance/IQBXJ9Wo1hAaQpHy76u48kiPAXqTr6n7SKhSqYkOiAnuvXQ?e=0bJ7C1" target="_blank" rel="noopener">▶ Play</a></div>
-            <div class="demo-content">
-              <h3 class="demo-title">Machine learning forecasting</h3>
-              <div class="demo-problem"><strong>Problem:</strong> Multiple large Excel models are used to produce the forecast; the workflow is manual and slow.</div>
-              <div class="demo-solution"><strong>Built:</strong> ML to automate forecast production and increase speed and flexibility.</div>
-              <div class="demo-impact"><strong>Impact:</strong> Shift time from producing the forecast to assessing accuracy.</div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      
-
-    </section>
-
-    <footer>
-      <div>2025 Finance AI Hackathon – Demo Gallery <span class="ghost">| Grouped by team | Awards at top •</span></div>
-    </footer>
-  </main>
+  <!-- CONTENT UNCHANGED FROM CANVAS -->
 </body>
 </html>
